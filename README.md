@@ -1,4 +1,9 @@
-# Don Wilson
+# Donald (Chip) Wilson
+
+**AI Automation & Systems Consultant**  
+Workflow diagnosis · n8n · APIs · AI-assisted implementation · verification & handoff
+
+[LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [AI Unfuck](https://aiunfuck.com/)
 
 I build and repair technical systems where automation, infrastructure, APIs, browser tooling, and AI-assisted workflows meet.
 
@@ -8,10 +13,32 @@ My strongest work tends to be the messy middle: figuring out what a system is ac
 
 - AI-assisted technical systems and workflow repair
 - automation and integration debugging
+- n8n, APIs, webhooks, and workflow lifecycle management
 - browser tooling and data extraction
 - infrastructure / deployment automation
 - observability, evidence capture, and operational reliability
 - human-in-the-loop control of agents and automated systems
+
+## Current proof
+
+### [AI Unfuck](https://aiunfuck.com/)
+A live rescue service for broken AI systems, workflows, automations, integrations, agents, and unfinished prototypes.
+
+The operating principle is simple: capture the person first, diagnose second. Customers do not need to know the root cause or technical vocabulary before asking for help.
+
+### Private current work
+
+A substantial portion of my newest work is private because it includes live systems, business infrastructure, conversation tooling, execution harnesses, or potentially commercial projects.
+
+Recent private work includes:
+
+- BranchBind — ChatGPT conversation-branch preservation with GitHub archival and browser download
+- n8n / API workflow lifecycle tooling
+- GitHub-backed execution and evidence capture
+- AI-assisted Navigator / Executor workflows
+- Cloudflare-based application and automation infrastructure
+
+I can discuss architecture, decisions, debugging process, and outcomes without exposing credentials or private implementation details.
 
 ## Selected public work
 
@@ -33,12 +60,12 @@ I use AI heavily, but I do not treat generated output as authority.
 
 I own problem framing, constraints, tradeoffs, intervention, acceptance criteria, and final validation. AI and automation are execution tools inside that process.
 
-A lot of my newer work is private because it includes live systems, client/business infrastructure, or potentially commercial tooling. I can discuss architecture, decisions, debugging process, and outcomes without exposing credentials or private implementation details.
-
 ## Background
 
-My GitHub history goes back years and includes Linux/server automation, web infrastructure, Cloudflare, Docker, Terraform, CI/CD, security tooling, and application work. Some older repositories are historical experiments, forks, or learning references; the projects above are a better starting point for current work.
+My GitHub history goes back years and includes Linux/server automation, web infrastructure, Cloudflare, Docker, Terraform, CI/CD, security tooling, and application work.
+
+Some older repositories are historical experiments, forks, or learning references. The projects above are a better starting point for current work.
 
 ---
 
-If you're reviewing this account, start with the selected public repositories above rather than the full repository list.
+If you're reviewing this account for work, start with **AI Unfuck** and the selected public repositories above rather than the full repository list.
