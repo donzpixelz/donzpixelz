@@ -3,7 +3,7 @@
 **AI Automation & Systems Consultant**
 
 Sarasota, Florida · Remote  
-[LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [GitHub](https://github.com/donzpixelz)
+[LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [GitHub](https://github.com/donzpixelz) · [Unjank AI](https://unjankai.com/)
 
 ## Professional Summary
 
@@ -36,7 +36,7 @@ Long-running self-employed business operator with nearly two decades of real pro
 
 ## Selected Work
 
-### Unjank AI
+### [Unjank AI](https://unjankai.com/)
 Professional-facing AI and automation rescue service focused on diagnosing broken workflows, integrations, agents, and unfinished technical implementations before prescribing a solution.
 
 ### BranchBind
