@@ -3,7 +3,7 @@
 **AI Automation & Systems Consultant**  
 Workflow diagnosis · n8n · APIs · AI-assisted implementation · verification & handoff
 
-[LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [AI Unfuck](https://aiunfuck.com/)
+[LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [Unjank AI](https://unjankai.com/)
 
 I build and repair technical systems where automation, infrastructure, APIs, browser tooling, and AI-assisted workflows meet.
 
@@ -21,7 +21,7 @@ My strongest work tends to be the messy middle: figuring out what a system is ac
 
 ## Current proof
 
-### [AI Unfuck](https://aiunfuck.com/)
+### [Unjank AI](https://unjankai.com/)
 A live rescue service for broken AI systems, workflows, automations, integrations, agents, and unfinished prototypes.
 
 The operating principle is simple: capture the person first, diagnose second. Customers do not need to know the root cause or technical vocabulary before asking for help.
@@ -68,4 +68,4 @@ Some older repositories are historical experiments, forks, or learning reference
 
 ---
 
-If you're reviewing this account for work, start with **AI Unfuck** and the selected public repositories above rather than the full repository list.
+If you're reviewing this account for work, start with **Unjank AI** and the selected public repositories above rather than the full repository list.
