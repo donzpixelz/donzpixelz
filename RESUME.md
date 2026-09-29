@@ -1,8 +1,8 @@
-# Don Wilson
+# Donald (Chip) Wilson
 
 **AI Automation & Systems Consultant**
 
-Sarasota, Florida · Remote  
+Ellenton, FL USA · Remote  
 [LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [GitHub](https://github.com/donzpixelz) · [Unjank AI](https://unjankai.com/)
 
 ## Professional Summary
@@ -36,8 +36,8 @@ Long-running self-employed business operator with nearly two decades of real pro
 
 ## Selected Work
 
-### [Unjank AI](https://unjankai.com/)
-Professional-facing AI and automation rescue service focused on diagnosing broken workflows, integrations, agents, and unfinished technical implementations before prescribing a solution.
+### Unjank AI
+Professional-facing AI and automation rescue service focused on diagnosing broken workflows, integrations, agents, and unfinished technical implementations before prescribing a solution. [unjankai.com](https://unjankai.com/)
 
 ### BranchBind
 Directed development and acceptance of a Chrome extension that preserves the active ChatGPT conversation branch as trustworthy Markdown with GitHub archival and browser download.
