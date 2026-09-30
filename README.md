@@ -5,6 +5,8 @@ Workflow diagnosis · n8n · APIs · AI-assisted implementation · verification 
 
 [LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [Unjank AI](https://unjankai.com/)
 
+**Portfolio:** [Automation & AI Systems Portfolio](./portfolio/README.md)
+
 I build and repair technical systems where automation, infrastructure, APIs, browser tooling, and AI-assisted workflows meet.
 
 My strongest work tends to be the messy middle: figuring out what a system is actually supposed to do, reducing unnecessary complexity, directing implementation, intervening when automation drifts, and validating that the final result really works.
