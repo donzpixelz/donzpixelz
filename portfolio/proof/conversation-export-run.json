@@ -1,0 +1,18 @@
+{
+  "evidence_type": "sanitized_runtime_execution",
+  "system": "Conversation Export — Canonical",
+  "observed_at": "2026-09-29T04:28:20Z",
+  "status": "success",
+  "trigger_mode": "webhook",
+  "identity_resolution": "live-project-list",
+  "turn_count": 384,
+  "markdown_bytes": 268184,
+  "completeness": "Current branch reaches the root node in the returned mapping",
+  "full_branch_root_confirmed": true,
+  "desktop_copy_requested": false,
+  "notes": [
+    "Conversation, project, account, URL, and internal service identifiers removed.",
+    "This execution did not request the optional desktop-copy branch, so no per-file SHA-256 is claimed for this run.",
+    "The workflow's desktop-copy branch separately verifies expected byte count and SHA-256 before reporting success."
+  ]
+}
