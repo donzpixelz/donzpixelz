@@ -1,153 +1,120 @@
 # Automation & AI Systems
 
-**Donald (Chip) Wilson** — AI automation & systems implementation
+**Donald (Chip) Wilson** — automation, integrations, browser tooling, and AI-assisted implementation
 
-I build workflows, integrations, browser tooling, and AI-assisted systems where **correct routing, evidence, and verification matter**.
+I build practical systems that make messy technical work easier to run, inspect, and trust.
 
-`n8n` · `REST APIs` · `Webhooks` · `Cloudflare Workers / D1 / R2` · `TypeScript` · `Google Ads API / GAQL` · `Chrome extensions` · `GitHub`
-
-## Selected systems
-
-| System | Concrete result | Proof |
-| --- | --- | --- |
-| **Paid Traffic Attribution & Revenue Intelligence** | First-touch attribution preserved; repeat paid clicks tracked per session; current Ads state separated from immutable evidence history | [Implementation evidence](./proof/traffic-attribution-system.md) |
-| **Verified Conversation Export Workflow** | Real run exported **384 turns / 268,184 bytes**, with exact-title resolution and full branch-root confirmation | [Sanitized run JSON](./proof/conversation-export-run.json) |
-| **Customer Intake & Human Review Pipeline** | Server-side intake, internal notification, customer confirmation, and a deliberate human scope/pricing boundary | [Implementation evidence](./proof/customer-intake-system.md) · [Live system](https://unjankai.com/) |
-| **Browser Conversation Archiver** | Reconstructs the current conversation path, exports Markdown/PDF, and can send a canonical archive through a narrow service | [Implementation evidence](./proof/browser-archive-system.md) |
+**Tools I work across:** `n8n` · `REST APIs` · `Webhooks` · `Chrome extensions` · `Swift / AppKit` · `Cloudflare Workers / D1 / R2` · `TypeScript` · `Google Ads API / GAQL` · `GitHub`
 
 ---
 
-## 1. Paid Traffic Attribution & Revenue Intelligence
+## Featured work
 
-**Problem:** Paid-click, website-session, and reporting data lived at different layers, making it easy to lose attribution history or confuse current state with historical evidence.
+### 1. BranchBind
 
-```mermaid
-flowchart LR
-    A[Website] --> B[First-party tracker]
-    B --> C[Visitor + session identity]
-    C --> D[Paid-click attribution]
-    D --> E[Google Ads API / GAQL]
-    E --> F[Change-aware snapshots]
-    F --> G[Immutable evidence archive]
+**Save the exact ChatGPT conversation branch you are looking at and preserve it cleanly to GitHub or download it.**
+
+BranchBind is a focused Chrome extension I use for current conversation preservation. It reconstructs the active branch instead of mixing in abandoned sibling branches, then exports clean Markdown.
+
+**Real output**
+
+```text
+bb--ai-unfuck--dev-nav-d.md
 ```
 
-- Immutable first-touch Google Ads / UTM attribution at visitor level.
-- Repeat paid-click attribution stored separately at session level.
-- Read-only Google Ads REST / GAQL bridge; no mutate operations.
-- Change-aware snapshots plus separate report and historical evidence archives.
-
-**Stack:** `Cloudflare Workers` · `D1` · `R2` · `TypeScript` · `Google Ads API` · `GAQL`
-
-**Proof:** [Sanitized implementation evidence →](./proof/traffic-attribution-system.md)
-
----
-
-## 2. Verified Conversation Export Workflow
-
-**Problem:** A workflow can be green while still exporting the wrong record, the wrong branch, or an unverifiable file.
-
-```mermaid
-flowchart LR
-    A[Webhook] --> B[Normalize + validate]
-    B --> C{Exact identity?}
-    C -->|No| X[Fail closed]
-    C -->|Yes| D[Resolve conversation]
-    D --> E[Export bridge]
-    E --> F{Desktop copy?}
-    F -->|Optional| G[Write + byte/SHA verification]
-    F -->|No| H[Return verified export]
-    G --> H
-```
-
-- 10-node n8n workflow with exact-title / exact-ID resolution and ambiguity rejection.
-- Uses authenticated API calls, conditional routing, and bounded retry.
-- Distinguishes workflow completion from verified task completion.
-- Optional local delivery verifies byte count and SHA-256 before success.
-
-**Stack:** `n8n` · `Webhooks` · `REST APIs` · `JSON` · `SSH` · `SHA-256`
-
-**Real execution:** **384 turns**, **268,184 bytes**, exact-title lookup, full branch-root confirmed.
-
-**Proof:** [Sanitized runtime evidence →](./proof/conversation-export-run.json)
-
----
-
-## 3. Customer Intake & Human Review Pipeline
-
-**Problem:** People with a broken automation often cannot diagnose the cause; intake should capture the problem without letting automation make binding business decisions.
-
-```mermaid
-flowchart LR
-    A[Customer form] --> B[Server-side validation]
-    B --> C[Structured intake]
-    C --> D[Internal notification]
-    C --> E[Customer confirmation]
-    D --> F[Human review]
-    F --> G[Scope / repair decision]
-```
-
-- Accepts browser form or JSON submissions through a server-side endpoint.
-- Sanitizes input and validates required contact data.
-- Sends internal notification and customer confirmation in parallel.
-- Fails the request if either required email delivery fails.
-- Keeps diagnosis, scope, and pricing under human review.
-
-**Stack:** `Astro` · `TypeScript / JavaScript` · `Cloudflare Pages Functions` · `Resend` · `HTML forms`
-
-**Proof:** [Implementation evidence →](./proof/customer-intake-system.md) · [Inspect the live intake surface →](https://unjankai.com/)
-
----
-
-## 4. Browser Conversation Archiver
-
-**Problem:** Exporting a long AI conversation should preserve the **current path a human is actually viewing**, not abandoned sibling branches or partial DOM text.
-
-```mermaid
-flowchart LR
-    A[Open ChatGPT conversation] --> B[Chrome extension]
-    B --> C[Authenticated page-context load]
-    C --> D[Current-path reconstruction]
-    D --> E[Normalize references]
-    E --> F[Markdown / PDF]
-    E --> G[Canonical archive service]
-```
-
-- Manifest V3 extension with only `activeTab`, `scripting`, and `downloads` permissions plus the archive-service host.
-- Loads conversation data from the authenticated page context and reconstructs the current path.
-- Produces Markdown and PDF from normalized conversation data.
-- Sends archive payloads only on explicit export action through a narrow authenticated Worker.
-
-**Stack:** `Chrome MV3` · `JavaScript` · `ChatGPT page context` · `Markdown/PDF` · `Cloudflare Worker` · `GitHub archive`
-
-**Proof:** [Sanitized implementation evidence →](./proof/browser-archive-system.md)
-
----
-
-## Additional work
-
-| System | What it does | Technical substance |
-| --- | --- | --- |
-| **Controlled AI Task Runner With Approval & Verification** | Creates/resumes one exact AI implementation task from an immutable handoff; handles sandbox, approval, result capture, and post-run verification | Node.js, CLI orchestration, immutable manifests, app-server integration, approval modes |
-| **Exact-ID ChatGPT Project & Conversation CLI** | Creates, opens, renames, deletes, exports, archives, and reconciles project/conversation state without guessing ambiguous names | Node.js, authenticated desktop integration, exact IDs, guarded mutation, GitHub archive |
-
-*Evidence-gated research/process mining work exists, but it is intentionally not featured here because the systems above are stronger proof of implementation capability.*
-
----
-
-## Capability map
-
-| I can help with | Typical work |
+| | |
 | --- | --- |
-| **Build** | n8n workflows, webhooks, API automations, browser tools, internal utilities |
-| **Integrate** | REST/JSON services, Cloudflare, GitHub, Google Ads data, browser/application contexts |
-| **Diagnose** | auth, routing, data-flow, attribution, stale-source, false-success, workflow drift |
-| **Operate safely** | exact identity, readback, checksums, evidence history, bounded failure handling |
-| **Hand off** | concise architecture, acceptance criteria, verification evidence, operating notes |
-
-> **AI implementation model:** AI is used heavily for implementation; Chip owns requirements, architecture, testing, verification, acceptance, and handoff.
+| **Built with** | Chrome MV3 · JavaScript · authenticated page-context requests · Cloudflare Worker · GitHub |
+| **Used for** | Current-branch ChatGPT export, browser download, canonical archive |
+| **Proof** | [Current sanitized BranchBind proof →](./proof/branchbind.md) |
 
 ---
 
-## Contact
+### 2. PageShot
+
+**Make full-page and responsive Chrome screenshots easy during web development and AI-assisted review.**
+
+PageShot is a native macOS utility with three simple actions:
+
+```text
+Active Tab        → capture the entire active Chrome page
+Quick Test        → 430×900 + 1440×900
+Full Responsive   → eight full-page viewport captures
+```
+
+The interface and capture engines are real working source, including the intentional Jax/LoLo branding.
+
+| | |
+| --- | --- |
+| **Built with** | Swift / AppKit · AppleScript · Chrome DevTools · macOS Accessibility |
+| **Used for** | Full-page capture, responsive QA, getting screenshots back into the human/AI review loop |
+| **Proof** | [Current sanitized PageShot proof →](./proof/pageshot.md) |
+
+---
+
+### 3. Conversation Export — Canonical
+
+**Take an exact request, resolve the correct conversation, export it, and verify the requested result instead of merely trusting that the workflow ran.**
+
+This is a live n8n/API workflow with fail-closed identity handling and real execution history.
+
+**Verified execution**
+
+```text
+status:                 success
+trigger:                webhook
+conversation turns:     384
+markdown bytes:         268,184
+full branch to root:    confirmed
+```
+
+| | |
+| --- | --- |
+| **Built with** | n8n · Webhooks · REST APIs · JSON · authenticated routing · verification |
+| **Used for** | Exact conversation resolution and verified export |
+| **Proof** | [Sanitized runtime execution →](./proof/conversation-export-run.json) |
+
+---
+
+### 4. TrafficMonitor
+
+**See real website visitor/session behavior and preserve trustworthy paid-traffic attribution.**
+
+TrafficMonitor is a first-party production system for understanding visitor sessions without rewriting the evidence later. It keeps original paid-traffic attribution intact while allowing later sessions and repeat paid clicks to be analyzed separately.
+
+**What it preserves**
+
+```text
+first touch       → immutable visitor attribution
+repeat paid click → session-level attribution
+current Ads state → separate from historical evidence
+```
+
+| | |
+| --- | --- |
+| **Built with** | Cloudflare Workers · D1 · R2 · TypeScript · Google Ads API / GAQL |
+| **Used for** | Visitor/session behavior, attribution, live operational review, historical evidence |
+| **Proof** | [Sanitized production-system evidence →](./proof/traffic-attribution-system.md) |
+
+---
+
+## More work
+
+| Project / system | What it does |
+| --- | --- |
+| **Customer Intake / Human Review** | Captures a technical problem with low friction, delivers it server-side, and keeps diagnosis/scope decisions human-controlled. [Proof →](./proof/customer-intake-system.md) |
+| **Codex Launcher / controlled task execution** | Turns one exact implementation request into a controlled AI task with explicit context, permissions, result capture, and verification. |
+| **ChatGPT Project & Conversation tooling** | Exact-ID project/conversation operations with ambiguity rejection, readback, and archive behavior. |
+| **Evidence-gated process analysis** | Research and qualification workflows that establish real friction before treating a manual process as an automation target. |
+
+---
+
+## What I can step into
+
+`n8n workflows` · `API/webhook integrations` · `workflow repair` · `browser tooling` · `Cloudflare systems` · `Google Ads data` · `testing & verification` · `technical handoff`
+
+> **AI-assisted implementation:** AI is used heavily for implementation; Chip owns requirements, architecture, testing, verification, acceptance, and handoff.
+
+---
 
 [LinkedIn](https://www.linkedin.com/in/donzpixelz/) · [GitHub](https://github.com/donzpixelz) · [Unjank AI](https://unjankai.com/)
